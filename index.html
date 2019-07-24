@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>LCM Parser</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,shrink-to-fit=no">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	
+	<!-- <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic" rel="stylesheet">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/foundation-icons.css">
+    <link rel="stylesheet" href="css/app2.css">
+</head>
+<body>
+<div class="row core">
+	<div class="columns large-7 medium-7 left-block">
+		<ul id="tabs">
+			<li>
+				<a href="#source" class="source-link active">
+				<svg width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M2.61 16.222c-1.3-1.28-2.203-2.905-2.594-4.677-.04-.173 0-.355.11-.493.11-.14.28-.22.46-.222h3.728c.245 0 .464.15.55.378.475 1.24 1.45 2.23 2.692 2.735 1.243.508 2.643.485 3.868-.06.222-.1.482-.054.655.115l2.65 2.608c.125.125.186.3.165.474-.02.175-.12.33-.27.424-1.852 1.166-4.052 1.674-6.236 1.44-2.185-.232-4.223-1.193-5.778-2.722zm12.014-14.72C11.97-.176 8.654-.467 5.74.72 2.83 1.91.69 4.427.017 7.462c-.04.17 0 .353.11.492.11.14.28.22.46.222h3.727c.246 0 .465-.15.55-.378.476-1.24 1.45-2.23 2.693-2.736 1.243-.507 2.642-.485 3.868.062.223.103.486.058.66-.113L14.73 2.4c.124-.125.186-.3.165-.474-.02-.175-.12-.33-.27-.425zm2.582 14.305c-.458.053-.916-.105-1.242-.428l-2.635-2.61c-.443-.442-.566-1.106-.31-1.673.463-1.015.463-2.177 0-3.193-.254-.566-.132-1.227.31-1.668l2.644-2.61c.326-.322.784-.48 1.243-.428.46.05.874.303 1.123.688C19.424 5.564 20 7.51 20 9.5c0 1.99-.576 3.938-1.66 5.615-.25.39-.668.645-1.134.692zM15.21 9.03c.026.315.026.632 0 .948h2.9c.017-.316.017-.632 0-.95h-2.9zm.807-2.847h1.436c-.137-.326-.295-.643-.472-.95l-.963.95zM14.814 7.37c.094.23.172.464.235.704h2.956c-.05-.32-.12-.638-.207-.95h-2.745l-.24.245zm2.975 4.505c.085-.312.155-.63.206-.95H15.05c-.064.242-.142.48-.235.71l.24.238 2.734.002zm-.337.948h-1.435l.963.95c.178-.307.336-.625.473-.95z" fill-rule="nonzero" fill="#00D18D"/></svg>
+				<span>Source Data</span>
+				</a>
+			</li>
+			<li>
+				<a href="#isolated" class="isolated-link fadein">
+				<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11.91 16.59l.608 2.65c.862-.184 1.703-.49 2.48-.898l-3.09-1.753zm7.986-5.302c.105-.938.042-1.855-.19-2.752l-3.088.897 3.278 1.855zm-6.012 3.63c-.462.305-.946.55-1.492.734l3.656 2.08c.4-.286.778-.592 1.135-.94l-3.3-1.875zm2.544-4.363c-.042.53-.147 1.02-.315 1.49l3.13 1.772c.043-.102.085-.204.127-.327.147-.367.252-.713.337-1.08l-3.28-1.855zm-.78 2.466c-.25.43-.545.817-.903 1.163l3.175 1.794c.294-.367.588-.775.82-1.202l-3.09-1.754zM4.427 10.148c0-1.345.483-2.57 1.26-3.567L2.704 3.257C1.84 4.174 1.126 5.275.643 6.54c-1.976 5.177.757 10.927 6.095 12.842 1.47.53 3.006.714 4.477.57l-.924-3.974c-3.258-.082-5.864-2.65-5.864-5.83zm6.012-5.83c.23 0 .44.02.672.04L12.665.26C9.407-.475 6.045.38 3.605 2.4l2.966 3.283c1.05-.857 2.396-1.366 3.868-1.366zm9.31 1.917c-.86-2.406-2.753-4.323-5.19-5.28l-.57-.225-1.596 3.893c1.66.713 2.774 1.692 3.614 3.26L20 6.826l-.252-.59zm-2.92.203c-.674-1.243-1.473-1.957-2.797-2.548l.632-1.55c1.64.774 2.92 2.1 3.678 3.71l-1.513.387z" fill-rule="nonzero" fill="#00D18D"/></svg>
+				<span>Isolated Data</span>
+				</a>
+			</li>
+		</ul>
+		<!-- <div class="row info">
+			<div class="columns medium-8 large-8">
+				<p>Please load source data and clusters to clarterize your data.
+						You can download your data by pressign download button</p>
+			</div>
+			<div class="columns medium-4 large-4">
+				<button type="button" class="button hollow load-samples">Load Demo Samples</button>
+			</div>
+		</div> -->
+		<div id="source" class="row tab-content active">
+			<div class="columns large-6 medium-6 drop-zone" data-drop-target="#everything">
+				<header>
+					<h5>
+						<!-- <i class="fi-page-copy"></i>  -->
+						Source Data
+					</h5>
+				</header>
+				<textarea class="flex-grow" name="everything" id="everything" rows="8" placeholder="Put everything here, separating blocks with empty line" title="Put everything here, separating blocks with empty line"></textarea>
+				<footer class="export-block">
+					<div class="input-group">
+						<input class="input-group-field" type="text" value="sourcedata" id="exporteverythingfile">
+						<span class="input-group-label">.txt</span>
+					</div>
+					<a href="#" id="exporteverything" download="sourcedata.txt" class="button hollow">Export</a>
+				</footer>
+				<div class="drop-target-helper">
+					<div class="info">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M858.6 745H380.5c-66 0-119.5-54.8-119.5-122.5v-490C260.9 64.9 314.4 10 380.5 10h478.1c66 0 119.5 54.8 119.5 122.5v490c0 67.7-53.5 122.5-119.5 122.5zm59.8-612.5c0-33.8-26.8-61.2-59.8-61.2H380.5c-33 0-59.8 27.4-59.8 61.2v490c0 33.8 26.8 61.2 59.8 61.2h478.1c33 0 59.8-27.4 59.8-61.2v-490zm-836.8 245v490c0 33.8 26.8 61.2 59.8 61.2h478.1c33 0 59.8-27.4 59.8-61.2v-61.2h59.8v61.2c0 67.7-53.5 122.5-119.5 122.5H141.4c-66 0-119.5-54.8-119.5-122.5v-490c0-67.7 53.5-122.5 119.5-122.5h59.8v61.2h-59.8c-33 .1-59.8 27.5-59.8 61.3z"/></svg>
+						<p>Drop file with Source Data here</p>
+					</div>
+				</div>
+			</div>
+			<div class="columns large-6 medium-6 drop-zone" data-drop-target="#clusters">
+				<header>
+					<h5>
+						<!-- <i class="fi-folder"></i>  -->
+						Clusters
+					</h5> 
+				</header>
+				<textarea class="flex-grow" name="clusters" id="clusters" rows="8" placeholder="Use | or / to split two interchangeable clusters" title="Use | or / to split two interchangeable clusters"></textarea>
+				<footer class="export-block">
+					<div class="input-group">
+						<input class="input-group-field" type="text" value="clusters" id="exportclustersfile">
+						<span class="input-group-label">.txt</span>
+					</div>
+					<a href="#" id="exportclusters" download="clusters.txt" class="button hollow">Export</a>
+				</footer>
+				<div class="drop-target-helper">
+					<div class="info">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M858.6 745H380.5c-66 0-119.5-54.8-119.5-122.5v-490C260.9 64.9 314.4 10 380.5 10h478.1c66 0 119.5 54.8 119.5 122.5v490c0 67.7-53.5 122.5-119.5 122.5zm59.8-612.5c0-33.8-26.8-61.2-59.8-61.2H380.5c-33 0-59.8 27.4-59.8 61.2v490c0 33.8 26.8 61.2 59.8 61.2h478.1c33 0 59.8-27.4 59.8-61.2v-490zm-836.8 245v490c0 33.8 26.8 61.2 59.8 61.2h478.1c33 0 59.8-27.4 59.8-61.2v-61.2h59.8v61.2c0 67.7-53.5 122.5-119.5 122.5H141.4c-66 0-119.5-54.8-119.5-122.5v-490c0-67.7 53.5-122.5 119.5-122.5h59.8v61.2h-59.8c-33 .1-59.8 27.5-59.8 61.3z"/></svg>
+						<p>Drop file with Clusters here</p>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<div id="isolated" class="row tab-content">
+			<div class="columns large-6 medium-6">
+				<h5>Blocks</h5>
+				<div id="blocks" class="">
+					<div id="block-links"></div>
+				</div>
+			</div>
+			<div class="columns large-6 medium-6">
+				<header>
+					<h5>
+						<!-- <i class="fi-page"></i>  -->
+						Isolated Data
+					</h5> 
+				</header>
+				<textarea class="flex-grow" name="input" id="input" rows="8"></textarea>
+				<p><input type="checkbox" id="uselocalmess"><label for="uselocalmess">Use only Isolated Data for processing</label></p>
+				<footer class="export-block">
+					<div class="input-group">
+						<input class="input-group-field" type="text" value="isolateddata" id="exportlocalfile">
+						<span class="input-group-label">.txt</span>
+					</div>
+					<a href="#" id="exportlocal" download="isolateddata.txt" class="button hollow">Export</a>
+				</footer>
+			</div>
+		</div>
+		<div class="main-buttons">
+			<a href="#" id="go" class="button"><i class="fi-refresh"></i> Process Source Data</a> 
+			<!-- <a href="#" id="download" download="stuff.csv" class="button success">Download .csv</a> -->
+			<a href="#" id="download" download="stuff.csv" class="button success fadein"><i class="fi-download"></i> Download</a>
+			
+			<div class="input-group download-group fadein">
+				<input class="input-group-field" type="text" value="stuff" id="downloadfile">
+				<span class="input-group-label">.csv</span>
+			</div>
+
+			<!-- <a href="#" id="maketable" class="button hollow"><i class="fi-list"></i> Generate table (experimental)</a>  -->
+			
+			<!-- <button type="button" class="button secondary hollow options" data-toggle="offCanvas"><i class="fi-widget"></i> Options</button> -->
+			<button type="button" class="button hollow load-samples">Load Demo Samples</button>
+		</div>
+	</div>
+
+	<div class="columns large-5 medium-5 right-block">
+		<div id="charts">
+			<div class="progressbar">
+				<div class="bar"><i class="fi-clock"></i> 0% Complete</div>
+			</div>
+			<div id="canvas" class="fadein">
+				
+			</div>
+			<footer class="export-block charts-export fadein">
+				<div class="input-group">
+					<input class="input-group-field" type="text" value="chart" id="graphfile">
+					<span class="input-group-label">.png</span>
+				</div>
+				<a href="#" id="savegraph" download="chart.png" class="button hollow">Download</a>
+			</footer>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+<script src="js/vendor/chart.min.js"></script>
+<script src="js/app.js"></script>  
+<script src="js/scripts2.js"></script>
+<!-- Created with ♥ by Pavel Burov -->
+</body>
+</html>
